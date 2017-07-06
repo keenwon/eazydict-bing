@@ -1,0 +1,51 @@
+{
+  "name": "eazydict-bing",
+  "version": "1.0.0-beta.1",
+  "description": "eazydict Bing词典插件",
+  "main": "index.js",
+  "scripts": {
+    "eslint": "mocha ./test/eslint.spec.js",
+    "test": "NODE_ENV=testing nyc --reporter=html --reporter=text mocha && nyc report --reporter=text-lcov | coveralls",
+    "start": "NODE_ENV=online nyc --reporter=html --reporter=text mocha --timeout 5000 && nyc report --reporter=text-lcov | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/keenwon/eazydict-youdao.git"
+  },
+  "author": {
+    "name": "keenwon",
+    "email": "semanwmj@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/keenwon/eazydict-youdao/issues"
+  },
+  "keywords": [
+    "eazydict",
+    "dictionary",
+    "translate",
+    "youdao",
+    "bing",
+    "google",
+    "terminal",
+    "console",
+    "linux"
+  ],
+  "homepage": "https://github.com/keenwon/eazydict-youdao#readme",
+  "devDependencies": {
+    "chai": "^4.0.2",
+    "chai-as-promised": "^7.1.1",
+    "chai-joi": "^1.1.0",
+    "coveralls": "^2.13.1",
+    "joi": "^10.6.0",
+    "mocha": "^3.4.2",
+    "mocha-eslint": "^3.0.1",
+    "nyc": "^11.0.2",
+    "proxyquire": "^1.8.0"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "eazydict-standard-output": "^1.1.0",
+    "node-fetch": "^1.7.1"
+  }
+}
