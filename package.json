@@ -1,6 +1,6 @@
 {
   "name": "eazydict-bing",
-  "version": "1.0.0-beta.3",
+  "version": "1.0.0-beta.4",
   "description": "eazydict Bing词典插件",
   "main": "index.js",
   "scripts": {
