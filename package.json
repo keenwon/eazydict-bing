@@ -1,6 +1,6 @@
 {
   "name": "eazydict-bing",
-  "version": "1.0.0-beta.2",
+  "version": "1.0.0-beta.3",
   "description": "eazydict Bing词典插件",
   "main": "index.js",
   "scripts": {
@@ -45,7 +45,8 @@
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
-    "eazydict-standard-output": "^1.1.0",
+    "debug": "^2.6.8",
+    "eazydict-standard-output": "^1.2.0",
     "https-proxy-agent": "^2.0.0",
     "node-fetch": "^1.7.1",
     "p-retry": "^1.0.0",
