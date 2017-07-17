@@ -1,6 +1,6 @@
 {
   "name": "eazydict-bing",
-  "version": "1.0.0-beta.5",
+  "version": "1.0.0-beta.6",
   "description": "eazydict Bing词典插件",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/keenwon/eazydict-youdao.git"
+    "url": "git+https://github.com/keenwon/eazydict-bing.git"
   },
   "author": {
     "name": "keenwon",
@@ -18,7 +18,7 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/keenwon/eazydict-youdao/issues"
+    "url": "https://github.com/keenwon/eazydict-bing/issues"
   },
   "keywords": [
     "eazydict",
@@ -31,7 +31,7 @@
     "console",
     "linux"
   ],
-  "homepage": "https://github.com/keenwon/eazydict-youdao#readme",
+  "homepage": "https://github.com/keenwon/eazydict-bing#readme",
   "devDependencies": {
     "chai": "^4.0.2",
     "chai-as-promised": "^7.1.1",
