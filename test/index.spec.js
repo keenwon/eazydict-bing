@@ -46,7 +46,7 @@ describe('主程序测试', function () {
       const schema = Joi.object({
         phonetics: Joi.array().length(2).required(),
         translates: Joi.array().length(2).required(),
-        examples: Joi.array().length(3).required()
+        examples: Joi.array().length(10).required()
       }).unknown().required();
 
       return bing('world')
@@ -60,8 +60,8 @@ describe('主程序测试', function () {
 
       const schema = Joi.object({
         phonetics: Joi.array().length(0).required(),
-        translates: Joi.array().min(1).required(),
-        examples: Joi.array().length(3).required()
+        translates: Joi.array().length(2).required(),
+        examples: Joi.array().length(10).required()
       }).unknown().required();
 
       return bing('hello world')
@@ -76,7 +76,7 @@ describe('主程序测试', function () {
       const schema = Joi.object({
         phonetics: Joi.array().length(1).required(),
         translates: Joi.array().length(2).required(),
-        examples: Joi.array().length(3).required()
+        examples: Joi.array().length(10).required()
       }).unknown().required();
 
       return bing('世界')
@@ -91,7 +91,7 @@ describe('主程序测试', function () {
       const schema = Joi.object({
         phonetics: Joi.array().length(0).required(),
         translates: Joi.array().length(1).required(),
-        examples: Joi.array().length(3).required()
+        examples: Joi.array().length(10).required()
       }).unknown().required();
 
       return bing('你好世界')
@@ -106,7 +106,7 @@ describe('主程序测试', function () {
       const schema = Joi.object({
         phonetics: Joi.array().length(0).required(),
         translates: Joi.array().length(0).required(),
-        examples: Joi.array().length(3).required()
+        examples: Joi.array().length(10).required()
       }).unknown().required();
 
       return bing('hello世界')
@@ -121,7 +121,7 @@ describe('主程序测试', function () {
       const schema = Joi.object({
         phonetics: Joi.array().length(0).required(),
         translates: Joi.array().length(0).required(),
-        examples: Joi.array().length(3).required()
+        examples: Joi.array().length(10).required()
       }).unknown().required();
 
       return bing('hello 世界')
@@ -136,7 +136,7 @@ describe('主程序测试', function () {
       const schema = Joi.object({
         phonetics: Joi.array().length(0).required(),
         translates: Joi.array().length(0).required(),
-        examples: Joi.array().length(3).required()
+        examples: Joi.array().length(10).required()
       }).unknown().required();
 
       return bing('123')
