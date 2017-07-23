@@ -1,7 +1,7 @@
 {
   "name": "eazydict-bing",
-  "version": "1.0.0-beta.9",
-  "description": "eazydict Bing词典插件",
+  "version": "1.0.0-beta.10",
+  "description": "EazyDict Bing词典插件",
   "main": "index.js",
   "scripts": {
     "eslint": "mocha ./test/eslint.spec.js",
