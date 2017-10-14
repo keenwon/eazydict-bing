@@ -145,6 +145,22 @@ describe('主程序测试', function () {
         });
     });
 
+    it('搜索建议', function () {
+      fetch.resetData('suggest');
+
+      const schema = Joi.object({
+        phonetics: Joi.array().length(0).required(),
+        translates: Joi.array().length(0).required(),
+        examples: Joi.array().length(0).required(),
+        suggests: Joi.array().length(9).required()
+      }).unknown().required();
+
+      return bing('ffasd')
+        .then(result => {
+          Joi.validate(result, schema).should.validate;
+        });
+    });
+
     it('插件名和 URL', function () {
       fetch.resetData('en_word');
 
