@@ -30,10 +30,8 @@ if (process.env.NODE_ENV === 'testing') {
 const mocha = require('mocha');
 const chai = require('chai');
 const Joi = require('joi');
-const chaiJoi = require('chai-joi');
 const chaiAsPromised = require('chai-as-promised');
 chai.should();
-chai.use(chaiJoi);
 chai.use(chaiAsPromised);
 
 describe('主程序测试', function () {
@@ -51,7 +49,7 @@ describe('主程序测试', function () {
 
       return bing('world')
         .then(result => {
-          Joi.validate(result, schema).should.validate;
+          Joi.validate(result, schema).should.include({ error: null });
         });
     });
 
@@ -66,7 +64,7 @@ describe('主程序测试', function () {
 
       return bing('hello world')
         .then(result => {
-          Joi.validate(result, schema).should.validate;
+          Joi.validate(result, schema).should.include({ error: null });
         });
     });
 
@@ -81,7 +79,7 @@ describe('主程序测试', function () {
 
       return bing('世界')
         .then(result => {
-          Joi.validate(result, schema).should.validate;
+          Joi.validate(result, schema).should.include({ error: null });
         });
     });
 
@@ -96,7 +94,7 @@ describe('主程序测试', function () {
 
       return bing('你好世界')
         .then(result => {
-          Joi.validate(result, schema).should.validate;
+          Joi.validate(result, schema).should.include({ error: null });
         });
     });
 
@@ -111,7 +109,7 @@ describe('主程序测试', function () {
 
       return bing('hello世界')
         .then(result => {
-          Joi.validate(result, schema).should.validate;
+          Joi.validate(result, schema).should.include({ error: null });
         });
     });
 
@@ -126,7 +124,7 @@ describe('主程序测试', function () {
 
       return bing('hello 世界')
         .then(result => {
-          Joi.validate(result, schema).should.validate;
+          Joi.validate(result, schema).should.include({ error: null });
         });
     });
 
@@ -141,7 +139,7 @@ describe('主程序测试', function () {
 
       return bing('123')
         .then(result => {
-          Joi.validate(result, schema).should.validate;
+          Joi.validate(result, schema).should.include({ error: null });
         });
     });
 
@@ -157,7 +155,7 @@ describe('主程序测试', function () {
 
       return bing('ffasd')
         .then(result => {
-          Joi.validate(result, schema).should.validate;
+          Joi.validate(result, schema).should.include({ error: null });
         });
     });
 
@@ -172,7 +170,7 @@ describe('主程序测试', function () {
 
       return bing('test')
         .then(result => {
-          Joi.validate(result, schema).should.validate;
+          Joi.validate(result, schema).should.include({ error: null });
         });
     });
   });
@@ -190,7 +188,7 @@ describe('主程序测试', function () {
 
       return bing('#WQE')
         .then(result => {
-          Joi.validate(result, schema).should.validate;
+          Joi.validate(result, schema).should.include({ error: null });
         });
     });
 
@@ -205,7 +203,7 @@ describe('主程序测试', function () {
 
       return bing('////')
         .then(result => {
-          Joi.validate(result, schema).should.validate;
+          Joi.validate(result, schema).should.include({ error: null });
         });
     });
 
@@ -235,7 +233,7 @@ describe('主程序测试', function () {
 
       return bing('network_error')
         .then(result => {
-          Joi.validate(result, schema).should.validate;
+          Joi.validate(result, schema).should.include({ error: null });
         });
     });
 
