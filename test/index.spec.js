@@ -37,121 +37,179 @@ describe('主程序测试', function () {
       resetData('en_word')
 
       const schema = Joi.object({
-        phonetics: Joi.array().length(2).required(),
-        translates: Joi.array().length(2).required(),
-        examples: Joi.array().length(10).required()
-      }).unknown().required()
+        phonetics: Joi.array()
+          .length(2)
+          .required(),
+        translates: Joi.array()
+          .length(2)
+          .required(),
+        examples: Joi.array()
+          .length(10)
+          .required()
+      })
+        .unknown()
+        .required()
 
-      return bing('world')
-        .then(result => {
-          Joi.validate(result, schema).should.include({ error: null })
-        })
+      return bing('world').then(result => {
+        Joi.validate(result, schema).should.include({ error: null })
+      })
     })
 
     it('英文短语', function () {
       resetData('en_phrase')
 
       const schema = Joi.object({
-        phonetics: Joi.array().length(0).required(),
-        translates: Joi.array().length(2).required(),
-        examples: Joi.array().length(10).required()
-      }).unknown().required()
+        phonetics: Joi.array()
+          .length(0)
+          .required(),
+        translates: Joi.array()
+          .length(2)
+          .required(),
+        examples: Joi.array()
+          .length(10)
+          .required()
+      })
+        .unknown()
+        .required()
 
-      return bing('hello world')
-        .then(result => {
-          Joi.validate(result, schema).should.include({ error: null })
-        })
+      return bing('hello world').then(result => {
+        Joi.validate(result, schema).should.include({ error: null })
+      })
     })
 
     it('中文单词', function () {
       resetData('cn_word')
 
       const schema = Joi.object({
-        phonetics: Joi.array().length(1).required(),
-        translates: Joi.array().length(2).required(),
-        examples: Joi.array().length(10).required()
-      }).unknown().required()
+        phonetics: Joi.array()
+          .length(1)
+          .required(),
+        translates: Joi.array()
+          .length(2)
+          .required(),
+        examples: Joi.array()
+          .length(10)
+          .required()
+      })
+        .unknown()
+        .required()
 
-      return bing('世界')
-        .then(result => {
-          Joi.validate(result, schema).should.include({ error: null })
-        })
+      return bing('世界').then(result => {
+        Joi.validate(result, schema).should.include({ error: null })
+      })
     })
 
     it('中文短语', function () {
       resetData('cn_phrase')
 
       const schema = Joi.object({
-        phonetics: Joi.array().length(0).required(),
-        translates: Joi.array().length(1).required(),
-        examples: Joi.array().length(10).required()
-      }).unknown().required()
+        phonetics: Joi.array()
+          .length(0)
+          .required(),
+        translates: Joi.array()
+          .length(1)
+          .required(),
+        examples: Joi.array()
+          .length(10)
+          .required()
+      })
+        .unknown()
+        .required()
 
-      return bing('你好世界')
-        .then(result => {
-          Joi.validate(result, schema).should.include({ error: null })
-        })
+      return bing('你好世界').then(result => {
+        Joi.validate(result, schema).should.include({ error: null })
+      })
     })
 
     it('中英单词', function () {
       resetData('en_cn_word')
 
       const schema = Joi.object({
-        phonetics: Joi.array().length(0).required(),
-        translates: Joi.array().length(0).required(),
-        examples: Joi.array().length(10).required()
-      }).unknown().required()
+        phonetics: Joi.array()
+          .length(0)
+          .required(),
+        translates: Joi.array()
+          .length(0)
+          .required(),
+        examples: Joi.array()
+          .length(10)
+          .required()
+      })
+        .unknown()
+        .required()
 
-      return bing('hello世界')
-        .then(result => {
-          Joi.validate(result, schema).should.include({ error: null })
-        })
+      return bing('hello世界').then(result => {
+        Joi.validate(result, schema).should.include({ error: null })
+      })
     })
 
     it('中英短语', function () {
       resetData('en_cn_phrase')
 
       const schema = Joi.object({
-        phonetics: Joi.array().length(0).required(),
-        translates: Joi.array().length(0).required(),
-        examples: Joi.array().length(10).required()
-      }).unknown().required()
+        phonetics: Joi.array()
+          .length(0)
+          .required(),
+        translates: Joi.array()
+          .length(0)
+          .required(),
+        examples: Joi.array()
+          .length(10)
+          .required()
+      })
+        .unknown()
+        .required()
 
-      return bing('hello 世界')
-        .then(result => {
-          Joi.validate(result, schema).should.include({ error: null })
-        })
+      return bing('hello 世界').then(result => {
+        Joi.validate(result, schema).should.include({ error: null })
+      })
     })
 
     it('数字', function () {
       resetData('number')
 
       const schema = Joi.object({
-        phonetics: Joi.array().length(0).required(),
-        translates: Joi.array().length(0).required(),
-        examples: Joi.array().length(10).required()
-      }).unknown().required()
+        phonetics: Joi.array()
+          .length(0)
+          .required(),
+        translates: Joi.array()
+          .length(0)
+          .required(),
+        examples: Joi.array()
+          .length(10)
+          .required()
+      })
+        .unknown()
+        .required()
 
-      return bing('123')
-        .then(result => {
-          Joi.validate(result, schema).should.include({ error: null })
-        })
+      return bing('123').then(result => {
+        Joi.validate(result, schema).should.include({ error: null })
+      })
     })
 
     it('搜索建议', function () {
       resetData('suggest')
 
       const schema = Joi.object({
-        phonetics: Joi.array().length(0).required(),
-        translates: Joi.array().length(0).required(),
-        examples: Joi.array().length(0).required(),
-        suggests: Joi.array().length(9).required()
-      }).unknown().required()
+        phonetics: Joi.array()
+          .length(0)
+          .required(),
+        translates: Joi.array()
+          .length(0)
+          .required(),
+        examples: Joi.array()
+          .length(0)
+          .required(),
+        suggests: Joi.array()
+          .length(9)
+          .required()
+      })
+        .unknown()
+        .required()
 
-      return bing('ffasd')
-        .then(result => {
-          Joi.validate(result, schema).should.include({ error: null })
-        })
+      return bing('ffasd').then(result => {
+        Joi.validate(result, schema).should.include({ error: null })
+      })
     })
 
     it('插件名和 URL', function () {
@@ -159,14 +217,19 @@ describe('主程序测试', function () {
 
       const url = `http://cn.bing.com/dict/search?q=${encodeURIComponent('test')}`
       const schema = Joi.object({
-        pluginName: Joi.string().equal('Bing').required(),
-        url: Joi.string().equal(url).required()
-      }).unknown().required()
+        pluginName: Joi.string()
+          .equal('Bing')
+          .required(),
+        url: Joi.string()
+          .equal(url)
+          .required()
+      })
+        .unknown()
+        .required()
 
-      return bing('test')
-        .then(result => {
-          Joi.validate(result, schema).should.include({ error: null })
-        })
+      return bing('test').then(result => {
+        Joi.validate(result, schema).should.include({ error: null })
+      })
     })
   })
 
@@ -175,39 +238,46 @@ describe('主程序测试', function () {
       resetData('error')
 
       const schema = Joi.object({
-        phonetics: Joi.array().length(0).required(),
-        translates: Joi.array().length(0).required(),
+        phonetics: Joi.array()
+          .length(0)
+          .required(),
+        translates: Joi.array()
+          .length(0)
+          .required(),
         error: Joi.any().optional()
-      }).unknown().required()
+      })
+        .unknown()
+        .required()
 
-      return bing('#WQE')
-        .then(result => {
-          Joi.validate(result, schema).should.include({ error: null })
-        })
+      return bing('#WQE').then(result => {
+        Joi.validate(result, schema).should.include({ error: null })
+      })
     })
 
     it('查询乱码', function () {
       resetData('notfound')
 
       const schema = Joi.object({
-        phonetics: Joi.array().length(0).required(),
-        translates: Joi.array().length(0).required(),
+        phonetics: Joi.array()
+          .length(0)
+          .required(),
+        translates: Joi.array()
+          .length(0)
+          .required(),
         error: Joi.any().optional()
-      }).unknown().required()
+      })
+        .unknown()
+        .required()
 
-      return bing('////')
-        .then(result => {
-          Joi.validate(result, schema).should.include({ error: null })
-        })
+      return bing('////').then(result => {
+        Joi.validate(result, schema).should.include({ error: null })
+      })
     })
 
     it('查询空关键字', function () {
       resetData('notfound')
 
-      return bing('')
-        .should
-        .eventually
-        .rejected
+      return bing('').should.eventually.rejected
     })
 
     it('网络异常', function () {
@@ -216,19 +286,28 @@ describe('主程序测试', function () {
       resetData('network_error')
 
       const schema = Joi.object({
-        phonetics: Joi.array().empty().required(),
-        translates: Joi.array().empty().required(),
+        phonetics: Joi.array()
+          .empty()
+          .required(),
+        translates: Joi.array()
+          .empty()
+          .required(),
         error: Joi.object({
-          code: Joi.number().integer(1).required(),
+          code: Joi.number()
+            .integer(1)
+            .required(),
           type: Joi.string().optional(),
-          message: Joi.string().allow('').optional()
+          message: Joi.string()
+            .allow('')
+            .optional()
         })
-      }).unknown().required()
+      })
+        .unknown()
+        .required()
 
-      return bing('network_error')
-        .then(result => {
-          Joi.validate(result, schema).should.include({ error: null })
-        })
+      return bing('network_error').then(result => {
+        Joi.validate(result, schema).should.include({ error: null })
+      })
     })
   })
 })

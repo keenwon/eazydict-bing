@@ -6,10 +6,7 @@ const parser = require('./lib/parser')
 const assign = require('lodash.assign')
 const defaultConfigs = require('./defaultConfig')
 const pkg = require('./package.json')
-const {
-  EDOutput,
-  CODES
-} = require('eazydict-standard-output')
+const { EDOutput, CODES } = require('eazydict-standard-output')
 
 // 入口
 function main (words, userConfigs) {
@@ -18,7 +15,7 @@ function main (words, userConfigs) {
     userConfigs
   })
 
-  let configs = assign({}, defaultConfigs, userConfigs)
+  const configs = assign({}, defaultConfigs, userConfigs)
 
   debug('use configs %O', configs)
 
@@ -27,7 +24,7 @@ function main (words, userConfigs) {
   }
 
   // 编码
-  let keywords = encodeURIComponent(words)
+  const keywords = encodeURIComponent(words)
 
   const url = `http://cn.bing.com/dict/search?q=${keywords}`
   debug(`fetch url ${url}`)
@@ -56,12 +53,11 @@ function main (words, userConfigs) {
 
 if (require.main === module) {
   // istanbul ignore next
-  let word = process.argv.slice(2).join(' ')
+  const word = process.argv.slice(2).join(' ')
 
-  main(word)
-    .then(result => {
-      console.log(result) // eslint-disable-line no-console
-    })
+  main(word).then(result => {
+    console.log(result) // eslint-disable-line no-console
+  })
 } else {
   module.exports = main
 }
