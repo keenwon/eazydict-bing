@@ -30,4 +30,4 @@ jobs:
         if: matrix.node_version == 12 && matrix.os == 'ubuntu-latest'
         uses: coverallsapp/github-action@master
         with:
-          github-token: ${{ secrets.token }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
