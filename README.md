@@ -19,8 +19,8 @@
 [license-url]: https://github.com/keenwon/eazydict-bing/blob/master/LICENSE
 [github-actions-image]: https://github.com/keenwon/eazydict-bing/workflows/unittest/badge.svg
 [github-actions-url]: https://github.com/keenwon/eazydict-bing/actions
-[coveralls-image]: https://img.shields.io/coveralls/keenwon/eazydict-bing.svg
-[coveralls-url]: https://coveralls.io/github/keenwon/eazydict-bing?branch=master
+[coveralls-image]: https://img.shields.io/codecov/c/github/keenwon/eazydict-bing
+[coveralls-url]: https://codecov.io/gh/keenwon/eazydict-bing
 [lgtm-alerts-image]: https://img.shields.io/lgtm/alerts/g/keenwon/eazydict-bing.svg?logo=lgtm&logoWidth=18
 [lgtm-alerts-url]: https://lgtm.com/projects/g/keenwon/eazydict-bing/alerts/
 [lgtm-grade-image]: https://img.shields.io/lgtm/grade/javascript/g/keenwon/eazydict-bing.svg?logo=lgtm&logoWidth=18
