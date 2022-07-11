@@ -37,20 +37,14 @@ describe('主程序测试', function () {
       resetData('en_word')
 
       const schema = Joi.object({
-        phonetics: Joi.array()
-          .length(2)
-          .required(),
-        translates: Joi.array()
-          .length(2)
-          .required(),
-        examples: Joi.array()
-          .length(10)
-          .required()
+        phonetics: Joi.array().length(2).required(),
+        translates: Joi.array().length(2).required(),
+        examples: Joi.array().length(10).required()
       })
         .unknown()
         .required()
 
-      return bing('world').then(result => {
+      return bing('world').then((result) => {
         schema.validate(result).should.not.have.property('error')
       })
     })
@@ -59,20 +53,14 @@ describe('主程序测试', function () {
       resetData('en_phrase')
 
       const schema = Joi.object({
-        phonetics: Joi.array()
-          .length(0)
-          .required(),
-        translates: Joi.array()
-          .length(2)
-          .required(),
-        examples: Joi.array()
-          .length(10)
-          .required()
+        phonetics: Joi.array().length(0).required(),
+        translates: Joi.array().length(2).required(),
+        examples: Joi.array().length(10).required()
       })
         .unknown()
         .required()
 
-      return bing('hello world').then(result => {
+      return bing('hello world').then((result) => {
         schema.validate(result).should.not.have.property('error')
       })
     })
@@ -81,20 +69,14 @@ describe('主程序测试', function () {
       resetData('cn_word')
 
       const schema = Joi.object({
-        phonetics: Joi.array()
-          .length(1)
-          .required(),
-        translates: Joi.array()
-          .length(2)
-          .required(),
-        examples: Joi.array()
-          .length(10)
-          .required()
+        phonetics: Joi.array().length(1).required(),
+        translates: Joi.array().length(2).required(),
+        examples: Joi.array().length(10).required()
       })
         .unknown()
         .required()
 
-      return bing('世界').then(result => {
+      return bing('世界').then((result) => {
         schema.validate(result).should.not.have.property('error')
       })
     })
@@ -103,20 +85,14 @@ describe('主程序测试', function () {
       resetData('cn_phrase')
 
       const schema = Joi.object({
-        phonetics: Joi.array()
-          .length(0)
-          .required(),
-        translates: Joi.array()
-          .length(1)
-          .required(),
-        examples: Joi.array()
-          .length(10)
-          .required()
+        phonetics: Joi.array().length(0).required(),
+        translates: Joi.array().length(1).required(),
+        examples: Joi.array().length(10).required()
       })
         .unknown()
         .required()
 
-      return bing('你好世界').then(result => {
+      return bing('你好世界').then((result) => {
         schema.validate(result).should.not.have.property('error')
       })
     })
@@ -125,20 +101,14 @@ describe('主程序测试', function () {
       resetData('en_cn_word')
 
       const schema = Joi.object({
-        phonetics: Joi.array()
-          .length(0)
-          .required(),
-        translates: Joi.array()
-          .length(0)
-          .required(),
-        examples: Joi.array()
-          .length(10)
-          .required()
+        phonetics: Joi.array().length(0).required(),
+        translates: Joi.array().length(0).required(),
+        examples: Joi.array().length(10).required()
       })
         .unknown()
         .required()
 
-      return bing('hello世界').then(result => {
+      return bing('hello世界').then((result) => {
         schema.validate(result).should.not.have.property('error')
       })
     })
@@ -147,20 +117,14 @@ describe('主程序测试', function () {
       resetData('en_cn_phrase')
 
       const schema = Joi.object({
-        phonetics: Joi.array()
-          .length(0)
-          .required(),
-        translates: Joi.array()
-          .length(0)
-          .required(),
-        examples: Joi.array()
-          .length(10)
-          .required()
+        phonetics: Joi.array().length(0).required(),
+        translates: Joi.array().length(0).required(),
+        examples: Joi.array().length(10).required()
       })
         .unknown()
         .required()
 
-      return bing('hello 世界').then(result => {
+      return bing('hello 世界').then((result) => {
         schema.validate(result).should.not.have.property('error')
       })
     })
@@ -169,20 +133,14 @@ describe('主程序测试', function () {
       resetData('number')
 
       const schema = Joi.object({
-        phonetics: Joi.array()
-          .length(0)
-          .required(),
-        translates: Joi.array()
-          .length(0)
-          .required(),
-        examples: Joi.array()
-          .length(10)
-          .required()
+        phonetics: Joi.array().length(0).required(),
+        translates: Joi.array().length(0).required(),
+        examples: Joi.array().length(10).required()
       })
         .unknown()
         .required()
 
-      return bing('123').then(result => {
+      return bing('123').then((result) => {
         schema.validate(result).should.not.have.property('error')
       })
     })
@@ -191,23 +149,15 @@ describe('主程序测试', function () {
       resetData('suggest')
 
       const schema = Joi.object({
-        phonetics: Joi.array()
-          .length(0)
-          .required(),
-        translates: Joi.array()
-          .length(0)
-          .required(),
-        examples: Joi.array()
-          .length(0)
-          .required(),
-        suggests: Joi.array()
-          .length(9)
-          .required()
+        phonetics: Joi.array().length(0).required(),
+        translates: Joi.array().length(0).required(),
+        examples: Joi.array().length(0).required(),
+        suggests: Joi.array().length(9).required()
       })
         .unknown()
         .required()
 
-      return bing('ffasd').then(result => {
+      return bing('ffasd').then((result) => {
         schema.validate(result).should.not.have.property('error')
       })
     })
@@ -217,17 +167,13 @@ describe('主程序测试', function () {
 
       const url = `http://cn.bing.com/dict/search?q=${encodeURIComponent('test')}`
       const schema = Joi.object({
-        pluginName: Joi.string()
-          .equal('Bing')
-          .required(),
-        url: Joi.string()
-          .equal(url)
-          .required()
+        pluginName: Joi.string().equal('Bing').required(),
+        url: Joi.string().equal(url).required()
       })
         .unknown()
         .required()
 
-      return bing('test').then(result => {
+      return bing('test').then((result) => {
         schema.validate(result).should.not.have.property('error')
       })
     })
@@ -238,18 +184,14 @@ describe('主程序测试', function () {
       resetData('error')
 
       const schema = Joi.object({
-        phonetics: Joi.array()
-          .length(0)
-          .required(),
-        translates: Joi.array()
-          .length(0)
-          .required(),
+        phonetics: Joi.array().length(0).required(),
+        translates: Joi.array().length(0).required(),
         error: Joi.any().optional()
       })
         .unknown()
         .required()
 
-      return bing('#WQE').then(result => {
+      return bing('#WQE').then((result) => {
         schema.validate(result).should.not.have.property('error')
       })
     })
@@ -258,18 +200,14 @@ describe('主程序测试', function () {
       resetData('notfound')
 
       const schema = Joi.object({
-        phonetics: Joi.array()
-          .length(0)
-          .required(),
-        translates: Joi.array()
-          .length(0)
-          .required(),
+        phonetics: Joi.array().length(0).required(),
+        translates: Joi.array().length(0).required(),
         error: Joi.any().optional()
       })
         .unknown()
         .required()
 
-      return bing('////').then(result => {
+      return bing('////').then((result) => {
         schema.validate(result).should.not.have.property('error')
       })
     })
@@ -286,26 +224,18 @@ describe('主程序测试', function () {
       resetData('network_error')
 
       const schema = Joi.object({
-        phonetics: Joi.array()
-          .empty()
-          .required(),
-        translates: Joi.array()
-          .empty()
-          .required(),
+        phonetics: Joi.array().empty().required(),
+        translates: Joi.array().empty().required(),
         error: Joi.object({
-          code: Joi.number()
-            .integer(1)
-            .required(),
+          code: Joi.number().integer(1).required(),
           type: Joi.string().optional(),
-          message: Joi.string()
-            .allow('')
-            .optional()
+          message: Joi.string().allow('').optional()
         })
       })
         .unknown()
         .required()
 
-      return bing('network_error').then(result => {
+      return bing('network_error').then((result) => {
         schema.validate(result).should.not.have.property('error')
       })
     })
