@@ -41,7 +41,7 @@
   ],
   "homepage": "https://github.com/keenwon/eazydict-bing#readme",
   "devDependencies": {
-    "chai": "^4.3.6",
+    "chai": "^4.3.7",
     "chai-as-promised": "^7.1.1",
     "elint": "^3.0.0-beta.1",
     "elint-preset-kw": "^3.0.0-beta.1",
